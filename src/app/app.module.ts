@@ -5,11 +5,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
-
-// used to create fake backend
 import { fakeBackendProvider } from './_helpers';
-
 
 // helpers
 import { ErrorInterceptor } from './_helpers';
@@ -21,28 +19,25 @@ import { HomeComponent } from './home';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-    // components, pipes
-    declarations: [
-        AppComponent,
-        AlertComponent,
-        HomeComponent,     
-    ],
-    //other modules
-    imports: [
-        BrowserModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        AppRoutingModule,
-        MaterialModule,
-        BrowserAnimationsModule                
-    ], 
-    //services   
-    providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },        
-        // provider used to create fake backend
-        fakeBackendProvider        
-    ],
-    // bootstrap component root
-    bootstrap: [AppComponent]
+  // components, pipes
+  declarations: [AppComponent, AlertComponent, HomeComponent],
+  //other modules
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    MaterialModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+  ],
+  //services
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    // provider used to create fake backend
+    fakeBackendProvider,
+  ],
+  // bootstrap component root
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
