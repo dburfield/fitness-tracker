@@ -37,15 +37,15 @@ export class ListComponent implements OnInit {
         (response) => (this.dataSource = new MatTableDataSource(response))
       );
     this.dataSource = new MatTableDataSource(this.users);
+    
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-    console.log(this.dataSource);
+    this.dataSource.filter = filterValue.trim().toLowerCase();    
   }
 
-  deleteUser(id: string) {
+  deleteUser(id: string) {    
     const user = this.users.find((x) => x.id === id);
     if (!user) return;
     user.isDeleting = true;
