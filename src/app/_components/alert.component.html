@@ -1,0 +1,6 @@
+﻿<mat-card *ngFor="let alert of alerts">    
+    <span [innerHTML]="alert.message"></span>
+    <button (click)="removeAlert(alert)" mat-icon-button aria-label="close">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-card>
