@@ -8,51 +8,51 @@
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Strength" #input >        
     </mat-form-field>
 
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" >
+    <mat-table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
         <!-- goalName Column -->
         <ng-container matColumnDef="goalName">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Goal Name </th>
-            <td mat-cell *matCellDef="let goal"> {{goal.goalName}} </td>
+            <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="30"> Goal Name </mat-header-cell>
+            <mat-cell *matCellDef="let goal" fxFlex="30"> {{goal.goalName}} </mat-cell>
         </ng-container>
 
         <!-- goalType Column -->
         <ng-container matColumnDef="goalType">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Goal Type </th>
-            <td mat-cell *matCellDef="let goal"> {{goal.goalType}} </td>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Goal Type </mat-header-cell>
+            <mat-cell *matCellDef="let goal"> {{goal.goalType}} </mat-cell>
         </ng-container>
 
         <!-- frequency Column -->
         <ng-container matColumnDef="frequency">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Frequency </th>
-            <td mat-cell *matCellDef="let goal"> {{goal.frequency | frequency}} </td>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Frequency </mat-header-cell>
+            <mat-cell *matCellDef="let goal"> {{goal.frequency | frequency}} </mat-cell>
         </ng-container>
 
         <!-- duration Column -->
         <ng-container matColumnDef="duration">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Duration </th>
-            <td mat-cell *matCellDef="let goal"> {{goal.duration | duration}} </td>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Duration </mat-header-cell>
+            <mat-cell *matCellDef="let goal"> {{goal.duration | duration}} </mat-cell>
         </ng-container>
 
         <!-- checkin Column -->
         <ng-container matColumnDef="checkin">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Success Rate </th>
-            <td mat-cell *matCellDef="let goal"> {{calcSuccessrate(goal.checkin, goal.frequency, goal.duration) | success}} </td>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Success Rate </mat-header-cell>
+            <mat-cell *matCellDef="let goal"> {{calcSuccessrate(goal.checkin, goal.frequency, goal.duration) | success}} </mat-cell>
         </ng-container>
 
         <!-- delete / update Column -->
         <ng-container matColumnDef="cta">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-            <td mat-cell *matCellDef="let goal">   
+            <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+            <mat-cell *matCellDef="let goal">   
                 <button mat-raised-button color="primary" routerLink="edit/{{goal.id}}">Update Goal</button>
-            </td>
+            </mat-cell>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
         <!-- Row shown when there is no matching data. -->
-        <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell" colspan="4">No data</td>
-        </tr>
-    </table>
+        <!-- <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data</mat-cell>
+        </tr> -->
+    </mat-table>
