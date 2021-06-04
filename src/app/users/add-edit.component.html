@@ -12,20 +12,21 @@
 
         </mat-card-header>
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
-            <mat-card-content fxLayout="column" fxFlexFill>
+            <mat-card-content fxLayout="column" fxLayoutGap="1em">
 
                 <h3 *ngIf="!isAddMode">Check-in</h3>
                 <mat-form-field appearance="fill" *ngIf="!isAddMode">
                     <mat-label>Update Check-Ins</mat-label>
                     
                     <input matInput type="number" formControlName="checkin" />
-                    <mat-icon matSuffix>stars</mat-icon>
+                    <mat-icon matSuffix class="stars-icon">stars</mat-icon>
                 </mat-form-field>
-                                
+
                 <h3 *ngIf="!isAddMode">Edit Goal Details</h3>
                 <mat-form-field appearance="fill">
                     <mat-label>Describe Goal</mat-label>
                     <input matInput type="text" formControlName="goalName" />
+                    <mat-hint *ngIf="isAddMode">required *</mat-hint>
                     <mat-error *ngIf="submitted && f.goalName.errors">
                         Goal Name is <strong>required</strong>
                     </mat-error>
@@ -41,6 +42,7 @@
                         <mat-option value="Flexibility">Flexibility</mat-option>
                         <mat-option value="General Fitness">General Fitness</mat-option>
                     </mat-select>
+                    <mat-hint *ngIf="isAddMode">required *</mat-hint>
                     <mat-error *ngIf="submitted && f.goalType.errors">You must make a selection</mat-error>
                 </mat-form-field>
 
@@ -53,6 +55,7 @@
                         <mat-option value="28">Monthly</mat-option>
                         <mat-option value="360">Yearly</mat-option>
                     </mat-select>
+                    <mat-hint *ngIf="isAddMode">required *</mat-hint>
                     <mat-error *ngIf="submitted && f.frequency.errors">You must make a selection</mat-error>
                 </mat-form-field>
 
@@ -68,6 +71,7 @@
                         <mat-option value="180">6 Months</mat-option>
                         <mat-option value="360">1 Year</mat-option>
                     </mat-select>
+                    <mat-hint *ngIf="isAddMode">required *</mat-hint>
                     <mat-error *ngIf="submitted && f.duration.errors">You must make a selection</mat-error>
                 </mat-form-field>
             </mat-card-content>
