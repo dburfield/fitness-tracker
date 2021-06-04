@@ -17,9 +17,11 @@
                 <h3 *ngIf="!isAddMode">Check-in</h3>
                 <mat-form-field appearance="fill" *ngIf="!isAddMode">
                     <mat-label>Update Check-Ins</mat-label>
+                    
                     <input matInput type="number" formControlName="checkin" />
+                    <mat-icon matSuffix>stars</mat-icon>
                 </mat-form-field>
-                
+                                
                 <h3 *ngIf="!isAddMode">Edit Goal Details</h3>
                 <mat-form-field appearance="fill">
                     <mat-label>Describe Goal</mat-label>
