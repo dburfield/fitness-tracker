@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-crud-example": {
+    "pro-fitness-tracker": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-crud-example",
+            "outputPath": "dist/pro-fitness-tracker",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -74,18 +74,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-crud-example:build"
+            "browserTarget": "pro-fitness-tracker:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-crud-example:build:production"
+              "browserTarget": "pro-fitness-tracker:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-crud-example:build"
+            "browserTarget": "pro-fitness-tracker:build"
           }
         },
         "test": {
@@ -123,16 +123,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-crud-example:serve"
+            "devServerTarget": "pro-fitness-tracker:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-crud-example:serve:production"
+              "devServerTarget": "pro-fitness-tracker:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular-crud-example"
+  "defaultProject": "pro-fitness-tracker"
 }
