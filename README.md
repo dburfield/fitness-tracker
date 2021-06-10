@@ -10,4 +10,4 @@ This is the github repository for the code used in my Fitness Tracking app. You 
 
 * Angular Flex https://github.com/angular/flex-layout
 
-### [Demo] soon
+### [Demo] http://danburfield.com/profitnesstracker/index.html
