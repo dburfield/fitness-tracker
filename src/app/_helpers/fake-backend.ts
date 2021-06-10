@@ -6,7 +6,7 @@ import { delay, materialize, dematerialize } from 'rxjs/operators';
 import { Types } from '@app/_models';
 
 // array in local storage for registered users
-const usersKey = 'provisions-goals-tracker11';
+const usersKey = 'profitness-goals-tracker11';
 const usersJSON = localStorage.getItem(usersKey);
 let users: any[] = usersJSON ? JSON.parse(usersJSON) : [{
     id: 1,
