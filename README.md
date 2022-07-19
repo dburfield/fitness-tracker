@@ -12,4 +12,3 @@ Data is stored in the browser. Each new session will set up a sample goal is non
 
 * Angular Flex https://github.com/angular/flex-layout
 
-### [Demo](https://tiltcycle.com/profitness-tracker/)
