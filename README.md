@@ -1,8 +1,8 @@
 # ProFitness Goals Tracker
 ## Set a goal. Track your progress.
-This is the github repository for the code used in my Fitness Tracking app. You can set up goals to track success rates. Enter a new goal with Type, Frequency, and Duration. Revisit to check-in your progress and see the calculation of success. For instance, a daily goal set to one week will yield a 100% success rate after 7 check-ins. 
+This is the github repository for the code used in my Fitness Tracking app. You can set up goals to track success rates. Enter a new goal with Type, Frequency, and Duration. Revisit to check-in your progress and see the calculation of success. For instance, a daily goal set to one week will yield a 100% success rate after 7 check-ins.
 
-Data is stored in the browser. Each new session will set up a sample goal is none other is found. 
+Data is stored in the browser. Each new session will set up a sample goal if none other is found.
 
 ## Used in Development
 
