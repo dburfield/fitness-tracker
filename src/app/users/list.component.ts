@@ -11,7 +11,7 @@ export class ListComponent implements OnInit {
   users!: User[];
   successRate: number = 0;
   filtervalue: string = '';
-  
+
   displayedColumns: string[] = [
     'goalName',
     'goalType',
@@ -37,21 +37,10 @@ export class ListComponent implements OnInit {
         (response) => (this.dataSource = new MatTableDataSource(response))
       );
     this.dataSource = new MatTableDataSource(this.users);
-    
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();    
-  }
-
-  deleteUser(id: string) {    
-    const user = this.users.find((x) => x.id === id);
-    if (!user) return;
-    user.isDeleting = true;
-    this.userService
-      .delete(id)
-      .pipe(first())
-      .subscribe(() => (this.users = this.users.filter((x) => x.id !== id)));
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
